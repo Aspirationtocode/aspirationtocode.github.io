@@ -20,15 +20,29 @@ $(function() {
 	buildCalendar(arrOfDateLi);
 	
 	list.appendChild(ulOfDates);
-	for (var i = 0; i < 7; i++) {
-		var li = arrOfDateLi[i];
-		if (li.indexOf('Сегодня') !== -1) {
-			ulOfDates.innerHTML += '<li class="active"><a href="#">' + li + '</a></li>';
+	
+	ulOfDates.innerHTML += '<li><a href="2_day_before.html">' + arrOfDateLi[0] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="1_day_before.html">' + arrOfDateLi[1] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="index.html">' + arrOfDateLi[2] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="1_day_after.html">' + arrOfDateLi[3] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="2_day_after.html">' + arrOfDateLi[4] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="3_day_after.html">' + arrOfDateLi[5] + '</a></li>';
+	ulOfDates.innerHTML += '<li><a href="4_day_after.html">' + arrOfDateLi[6] + '</a></li>';
 
-		} else {
-			ulOfDates.innerHTML += '<li><a href="#">' + li + '</a></li>';
+	function activateDay(string) {
+		if ($('body').attr('name') === string) {
+			$('.lent-ul-first').find(`[href="${string}.html"]`).parent().addClass('active');
 		}
 	}
+	activateDay('1_day_after')
+	activateDay('2_day_after')
+	activateDay('3_day_after')
+	activateDay('4_day_after')
+	activateDay('1_day_before')
+	activateDay('2_day_before')
+	activateDay('index')
+	
+	
 	
 	var selectParams = $('.select-params')[0];
 	selectParams.onclick = function(e) {
@@ -56,13 +70,7 @@ $(function() {
 	}
 	
 
-	// date moment.js
 
-	// var films = $('.film-pr');
-	// for (var i = 0; i < films.length; i++) {
-	// 	var el = films[i];
-	// 	el.innerHTML += '<i class="fa fa-film"></i>';
-	// }
 	var program = $('.program-dscr');
 	for (var i = 0; i < program.length; i++) {
 		var el = program[i];
@@ -96,44 +104,7 @@ $(function() {
 		
 	}
 	
+
 	
-	
-
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
-
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
-
-	//Chrome Smooth Scroll
-	try {
-		$.browserSelector();
-		if($("html").hasClass("chrome")) {
-			$.smoothScroll();
-		}
-	} catch(err) {
-
-	};
-
-	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 });
