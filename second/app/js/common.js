@@ -258,7 +258,6 @@ $(function() {
 	};
 
 	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
 	$("form").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
@@ -285,6 +284,5 @@ $(function() {
 
 	};
 
-	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 });
