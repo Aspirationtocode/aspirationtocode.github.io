@@ -99,6 +99,7 @@ $(function() {
 		if (li.find('.popup').length === 0) {
 			li.append(popup);	
 			console.log($(window).height() - popup.offset().top)
+			console.log(popup.offset().top)
 			if ($(window).height() - popup.offset().top < popup.outerHeight(true)) {
 				popup.css({
 					top: `-=${popup.offset().top / 2}`
