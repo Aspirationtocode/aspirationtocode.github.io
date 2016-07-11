@@ -1,52 +1,146 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
 <head>
-    <meta charset="utf-8">
-    <title>Dungeon of Doom</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/app.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta charset="utf-8">
+
+	<title>Заголовок</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	
+	<!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
+	<style></style>
+
+	<!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+	<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
+
+	<!-- Load CSS Start -->
+	<script>loadCSS( "css/fonts.min.css?ver=1.0.0" );</script>
+	<script>loadCSS( "css/header.min.css?ver=1.0.0", false, "all" );</script>
+	<script>loadCSS( "css/main.min.css?ver=1.0.0", false, "all" );</script>
+	<script>loadCSS( "css/reset.css?ver=1.0.0", false, "all" );</script>
+	<script>loadCSS( "css/app.css?ver=1.0.0", false, "all" );</script>
+	<!-- Load CSS End -->
+
+	<!-- Load CSS Compiled without JS -->
+	<noscript>
+		<link rel="stylesheet" href="css/fonts.min.css">
+		<link rel="stylesheet" href="css/main.min.css">
+	</noscript>
+
 </head>
 
 <body>
-    <!-- Thanks for assets to Kenny at http://kenney.nl/assets/platformer-pack-redux -->
+	<!-- Thanks for assets to Kenny at http://kenney.nl/assets/platformer-pack-redux -->
     <div class="app container">
-        <div class="level level_0"><div class="door door_locked door_level_0"></div></div>
-        <div class="level level_1"><div class="door door_locked door_disabled door_level_1"></div></div>
-        <div class="level level_2"><div class="door door_locked door_disabled door_level_2"></div></div>
-        <div class="level level_3"><div class="box box_locked door door_disabled door_level_3"></div></div>
-        <div class="level level_4"></div>
+      <div class="level level_0">
+      	<div class="door door_locked door_level_0"></div>
+      </div>
+      <div class="level level_1">
+      	<div class="door door_locked door_disabled door_level_1"></div>
+      </div>
+      <div class="level level_2">
+      	<div class="door door_locked door_disabled door_level_2"></div>
+      </div>
+      <div class="level level_3">
+      	<div class="box box_locked door door_disabled door_level_3"></div>
+      </div>
+      <div class="level level_4"></div>
 
-        <div class="popup popup_hidden popup_level_0">
-            <div class="popup__content popup__content_level_0" touch-action="none">
-                <div class="popup__close">╳</div>
-                <div class="door-riddle">
-                    <div class="door-riddle__button door-riddle__button_0"></div>
-                    <div class="door-riddle__button door-riddle__button_1"></div>
-                    <div class="door-riddle__button door-riddle__button_2"></div>
-                </div>
-            </div>
+      <div class="popup popup_hidden popup_level_0">
+        <div class="popup__content popup__content_level_0" touch-action="none">
+          <div class="popup__close">╳</div>
+          <div class="door-riddle">
+            <div class="door-riddle__button door-riddle__button_0"></div>
+            <div class="door-riddle__button door-riddle__button_1"></div>
+            <div class="door-riddle__button door-riddle__button_2"></div>
+          </div>
         </div>
-        <div class="popup popup_hidden popup_level_1">
-            <div class="popup__content popup__content_level_1">
-                <div class="popup__close">╳</div>
+      </div>
+      <div class="popup popup_hidden popup_level_1">
+        <div class="popup__content popup__content_level_1">
+           <div class="popup__close">╳</div>
+           <div class="door-riddle">
+            <div class="door-riddle__button door-riddle__button_0">
+            	<span class='door-riddle__value door-riddle__value_0'>0</span>
             </div>
-        </div>
-        <div class="popup popup_hidden popup_level_2">
-            <div class="popup__content popup__content_level_2">
-                <div class="popup__close">╳</div>
+            <div class="door-riddle__button door-riddle__button_1">
+            	<span class='door-riddle__value door-riddle__value_1'>2</span>
             </div>
-        </div>
-        <div class="popup popup_hidden popup_level_3">
-            <div class="popup__content popup__content_level_3">
-                <div class="popup__close">╳</div>
+            <div class="door-riddle__button door-riddle__button_2">
+            	<span class='door-riddle__value door-riddle__value_2'>5</span>
             </div>
+            <!-- 0 1 1 2 3 5 8 13 21 -->
+            <!-- animated infinite flash -->
+            <div class="door-riddle__swipe door-riddle__swipe_0">
+            	<div class='door-riddle__arrow door-riddle__arrow_0'></div>
+            </div>
+            <div class="door-riddle__button door-riddle__button_3">
+            	<span class='door-riddle__value door-riddle__value_3'>3</span>
+            </div>
+            <div class="door-riddle__button door-riddle__button_4">
+            	<span class='door-riddle__value door-riddle__value_4'>8</span>
+            </div>
+            <div class="door-riddle__button door-riddle__button_5">
+            	<span class='door-riddle__value door-riddle__value_5'>1</span>
+            </div>
+            <div class="door-riddle__swipe door-riddle__swipe_1">
+            	<div class='door-riddle__arrow door-riddle__arrow_1'></div>
+            </div>
+            <div class="door-riddle__button door-riddle__button_6">
+            	<span class='door-riddle__value door-riddle__value_6'>1</span>
+            </div>
+            <div class="door-riddle__button door-riddle__button_7">
+            	<span class='door-riddle__value door-riddle__value_7'>21</span>
+            </div>
+            <div class="door-riddle__button door-riddle__button_8">
+            	<span class='door-riddle__value door-riddle__value_8'>13</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="popup popup_hidden popup_level_2">
+        <div class="popup__content popup__content_level_2">
+           <div class="popup__close">╳</div>
+        </div>
+      </div>
+      <div class="popup popup_hidden popup_level_3">
+        <div class="popup__content popup__content_level_3">
+           <div class="popup__close">╳</div>
+        </div>
+      </div>
     </div>
+		
 
-    <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
-    <script src="js/doorBase.js"></script>
-    <script src="js/doorOthers.js"></script>
-    <script src="js/app.js"></script>
+	<div class="hidden"></div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+	<!-- Load Scripts Start -->
+	<script>var scr = {"scripts":[
+		{"src" : "js/libs.js", "async" : false},
+		{"src" : "js/common.js", "async" : false},
+		{"src" : "https://code.jquery.com/pep/0.4.1/pep.js", "async" : false},
+		{"src" : "js/doorBase.js", "async" : false},
+		{"src" : "js/doorOthers.js", "async" : false},
+		{"src" : "js/app.js", "async" : false},
+		]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+	</script>
+	<!-- Load Scripts End -->
+
 </body>
 </html>

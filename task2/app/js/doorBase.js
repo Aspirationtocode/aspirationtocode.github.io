@@ -1,58 +1,84 @@
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 /**
  * Базовый класс всех дверей
  * @class DoorBase
  * @param {Number} number
  * @param {Function} onUnlock
  */
-function DoorBase(number, onUnlock) {
+
+var DoorBase = function () {
+  function DoorBase(number, onUnlock) {
+    var _this = this;
+
+    _classCallCheck(this, DoorBase);
+
     this.number = number;
     this.onUnclockCallback = onUnlock;
 
-    this.level = document.querySelector('.level_' + number);
-    this.door = document.querySelector('.door_level_' + number);
-    this.popup = document.querySelector('.popup_level_' + number);
-    this.close = this.popup.querySelector('.popup__close');
+    this.level = $('.level_' + number);
+    this.door = $('.door_level_' + number);
+    this.popup = $('.popup_level_' + number);
+    this.close = this.popup.find('.popup__close');
 
     this.isLocked = true;
-    this.isDisabled = this.door.classList.contains('door_disabled');
+    this.isDisabled = this.door.hasClass('door_disabled');
+    var onDoorClick = function onDoorClick() {
+      if (!_this.isDisabled) {
+        _this.openPopup();
+      }
+    };
+    var onCloseClick = function onCloseClick() {
+      _this.closePopup();
+    };
+    this.door.on('click', onDoorClick.bind(this));
+    this.close.on('click', onCloseClick.bind(this));
+  }
 
-    this.door.addEventListener('click', onDoorClick.bind(this));
-    this.close.addEventListener('click', onCloseClick.bind(this));
-
-    function onDoorClick() {
-        if (!this.isDisabled) {
-            this.openPopup();
-        }
+  _createClass(DoorBase, [{
+    key: 'openPopup',
+    value: function openPopup() {
+      this.popup.removeClass('popup_hidden');
     }
-
-    function onCloseClick() {
-        this.closePopup();
+  }, {
+    key: 'closePopup',
+    value: function closePopup() {
+      this.popup.addClass('popup_hidden');
     }
-}
-
-DoorBase.prototype = {
-    openPopup: function() {
-        this.popup.classList.remove('popup_hidden');
-    },
-    closePopup: function() {
-        this.popup.classList.add('popup_hidden');
-    },
-    enable: function() {
-        this.door.classList.remove('door_disabled');
-        this.isDisabled = false;
-    },
+  }, {
+    key: 'enable',
+    value: function enable() {
+      this.door.removeClass('door_disabled');
+      this.isDisabled = false;
+    }
     /**
      * Вызывается, если после последовательности действий
      * дверь считается открытой
      */
-    unlock: function() {
-        this.door.classList.remove('door_locked');
-        this.isLocked = false;
-        this.closePopup();
-        this.onUnclockCallback();
-        this.showCongratulations();
-    },
-    showCongratulations: function() {
-        alert('Дверь ' + this.number + ' открыта!')
+
+  }, {
+    key: 'unlock',
+    value: function unlock() {
+      this.door.removeClass('door_locked');
+      this.isLocked = false;
+      this.closePopup();
+      this.onUnclockCallback();
+      this.showCongratulations();
     }
-};
+  }, {
+    key: 'showCongratulations',
+    value: function showCongratulations() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        alert('Дверь ' + _this2.number + ' открыта!');
+      }, 300);
+    }
+  }]);
+
+  return DoorBase;
+}();
