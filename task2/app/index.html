@@ -42,84 +42,95 @@
 
 <body>
 	<!-- Thanks for assets to Kenny at http://kenney.nl/assets/platformer-pack-redux -->
-    <div class="app container">
-      <div class="level level_0">
-      	<div class="door door_locked door_level_0"></div>
-      </div>
-      <div class="level level_1">
-      	<div class="door door_locked door_disabled door_level_1"></div>
-      </div>
-      <div class="level level_2">
-      	<div class="door door_locked door_disabled door_level_2"></div>
-      </div>
-      <div class="level level_3">
-      	<div class="box box_locked door door_disabled door_level_3"></div>
-      </div>
-      <div class="level level_4"></div>
+	<div class="app container">
+		<div class="level level_0">
+			<div class="door door_locked door_level_0"></div>
+		</div>
+		<div class="level level_1">
+			<div class="door door_locked door_disabled door_level_1"></div>
+		</div>
+		<div class="level level_2">
+			<div class="door door_locked door_disabled door_level_2"></div>
+		</div>
+		<div class="level level_3">
+			<div class="box box_locked door door_disabled door_level_3"></div>
+		</div>
+		<div class="level level_4"></div>
 
-      <div class="popup popup_hidden popup_level_0">
-        <div class="popup__content popup__content_level_0" touch-action="none">
-          <div class="popup__close">╳</div>
-          <div class="door-riddle">
-            <div class="door-riddle__button door-riddle__button_0"></div>
-            <div class="door-riddle__button door-riddle__button_1"></div>
-            <div class="door-riddle__button door-riddle__button_2"></div>
-          </div>
-        </div>
-      </div>
-      <div class="popup popup_hidden popup_level_1">
-        <div class="popup__content popup__content_level_1">
-           <div class="popup__close">╳</div>
-           <div class="door-riddle">
-            <div class="door-riddle__button door-riddle__button_0">
-            	<span class='door-riddle__value door-riddle__value_0'>0</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_1">
-            	<span class='door-riddle__value door-riddle__value_1'>2</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_2">
-            	<span class='door-riddle__value door-riddle__value_2'>5</span>
-            </div>
-            <!-- 0 1 1 2 3 5 8 13 21 -->
-            <!-- animated infinite flash -->
-            <div class="door-riddle__swipe door-riddle__swipe_0">
-            	<div class='door-riddle__arrow door-riddle__arrow_0'></div>
-            </div>
-            <div class="door-riddle__button door-riddle__button_3">
-            	<span class='door-riddle__value door-riddle__value_3'>3</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_4">
-            	<span class='door-riddle__value door-riddle__value_4'>8</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_5">
-            	<span class='door-riddle__value door-riddle__value_5'>1</span>
-            </div>
-            <div class="door-riddle__swipe door-riddle__swipe_1">
-            	<div class='door-riddle__arrow door-riddle__arrow_1'></div>
-            </div>
-            <div class="door-riddle__button door-riddle__button_6">
-            	<span class='door-riddle__value door-riddle__value_6'>1</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_7">
-            	<span class='door-riddle__value door-riddle__value_7'>21</span>
-            </div>
-            <div class="door-riddle__button door-riddle__button_8">
-            	<span class='door-riddle__value door-riddle__value_8'>13</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup popup_hidden popup_level_2">
-        <div class="popup__content popup__content_level_2">
-           <div class="popup__close">╳</div>
-        </div>
-      </div>
-      <div class="popup popup_hidden popup_level_3">
-        <div class="popup__content popup__content_level_3">
-           <div class="popup__close">╳</div>
-        </div>
-      </div>
-    </div>
+		<div class="popup popup_hidden popup_level_0">
+			<div class="popup__content popup__content_level_0" touch-action="none">
+				<div class="popup__close">╳</div>
+				<div class="door-riddle">
+					<div class="door-riddle__button door-riddle__button_0"></div>
+					<div class="door-riddle__button door-riddle__button_1"></div>
+					<div class="door-riddle__button door-riddle__button_2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup_hidden popup_level_1">
+			<div class="popup__content popup__content_level_1">
+				 <div class="popup__close">╳</div>
+				 <div class="door-riddle" touch-action='none'>
+					<div class="door-riddle__button door-riddle__button_0">
+						<span class='door-riddle__value door-riddle__value_0'>0</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_1">
+						<span class='door-riddle__value door-riddle__value_1'>2</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_2">
+						<span class='door-riddle__value door-riddle__value_2'>5</span>
+					</div>
+					<div class="door-riddle__swipe door-riddle__swipe_0">
+						<div class='door-riddle__arrow door-riddle__arrow_0'></div>
+					</div>
+					<div class="door-riddle__button door-riddle__button_3">
+						<span class='door-riddle__value door-riddle__value_3'>3</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_4">
+						<span class='door-riddle__value door-riddle__value_4'>8</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_5">
+						<span class='door-riddle__value door-riddle__value_5'>1</span>
+					</div>
+					<div class="door-riddle__swipe door-riddle__swipe_1">
+						<div class='door-riddle__arrow door-riddle__arrow_1'></div>
+					</div>
+					<div class="door-riddle__button door-riddle__button_6">
+						<span class='door-riddle__value door-riddle__value_6'>1</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_7">
+						<span class='door-riddle__value door-riddle__value_7'>21</span>
+					</div>
+					<div class="door-riddle__button door-riddle__button_8">
+						<span class='door-riddle__value door-riddle__value_8'>13</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup_hidden popup_level_2">
+			<div class="popup__content popup__content_level_2">
+				<div class="popup__close">╳</div>
+				<div class="door-riddle">
+					<div class="door-riddle__icon-wrapper door-riddle__icon-wrapper_0 animated infinite bounce">
+						<div class="door-riddle__cogwheel door-riddle__cogwheel_0"></div>
+					</div>
+					<div class="door-riddle__icon-wrapper door-riddle__icon-wrapper_1 animated infinite bounce">
+						<div class="door-riddle__cogwheel door-riddle__cogwheel_1"></div>
+					</div>
+					<div class="door-riddle__icon-wrapper door-riddle__icon-wrapper_2 animated infinite bounce">
+						<div class="door-riddle__cogwheel door-riddle__cogwheel_2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="popup popup_hidden popup_level_3">
+				<div class="popup__content popup__content_level_3">
+					<div class='door-riddle'>
+						<div class="door-riddle__element"></div>
+					</div>
+					<div class="popup__close">╳</div>
+				</div>
+			</div>
+		</div>
 		
 
 	<div class="hidden"></div>

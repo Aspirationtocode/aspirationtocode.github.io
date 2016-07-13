@@ -76,7 +76,7 @@ var DoorBase = function () {
 
       setTimeout(function () {
         alert('Дверь ' + _this2.number + ' открыта!');
-      }, 300);
+      }, 100);
     }
   }]);
 

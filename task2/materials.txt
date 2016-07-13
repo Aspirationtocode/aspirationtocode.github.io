@@ -1,0 +1,10 @@
+﻿http://mwbrooks.github.io/thumbs.js/ => library
+http://hammerjs.github.io/ => library
+https://www.sencha.com/blog/ext-js-on-tap/ => article
+https://www.udacity.com/course/mobile-web-development--cs256 => course
+https://github.com/ftlabs/fastclick => library
+https://github.com/jquery/PEP => library
+https://www.w3.org/TR/pointerevents/ => Спецификация
+192.168.1.13.xip.io
+http://professorweb.ru/my/javascript/jquery/level4/4_12.php
+https://github.com/hammerjs/hammer.js/wiki/Getting-Started => хорошие материалы по hammer.js

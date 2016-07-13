@@ -55,7 +55,6 @@ var Door0 = function (_DoorBase) {
 			if (isOpened) {
 				_this.unlock();
 			}
-			_this.unlock();
 		};
 		return _this;
 	}
@@ -130,77 +129,26 @@ var Door1 = function (_DoorBase2) {
 						}
 					});
 				}
-				// #################################################
-				// Надо сократить код.
-				// #################################################
 				if (i < arrOfPoints.length - 1 && abilityToGenerate) {
 					generateEvent(arrOfPointsPriority, i + 1);
 				}
 			});
 		};
-
 		generateEvent(arrOfPointsPriority, 0);
-
-		// var swipe1 = this.popup.find('.door-riddle__swipe_1').hammer();
-		// swipe1.bind('swipe', function(e) {
-		// 	if (e.gesture.direction === 2) {
-		// 		console.log(e)
-		// 	}
-		// })
-
-		// var point0 = arrOfPoints[0];
-		// var point1 = arrOfPoints[1];
-		// var complete = {
-		// 	point0down: false,
-		// 	point1up: false
-		// }
-		// doorRiddle.bind('pointerup', function(e) {
-		// 	complete.point1up = false;
-		// 	console.log('pUUUUp')
-		// })
-		// point0.bind('pointerdown', function(e) {
-		// 	$(this).css({
-		// 		backgroundColor: 'red'
-		// 	})
-		// 	complete.point0down = true;
-		// 	console.log('point0down')
-		// 	console.log(complete)
-		// })
-		// // point0.bind('pointerup', function(e) {
-		// // 	console.log('point0up')
-		// // })
-		// // point1.bind('pointerdown', function(e) {
-		// // 	console.log('point1down')
-		// // })
-		// point1.bind('pointerup', function(e) {
-		// 	complete.point1up = true;
-		// 	console.log('point1up')
-		// 	console.log(complete)
-		// 	checkCondition()
-		// })
-
-		// if (complete.point0down === true && complete.point1up === true) {
-		// 	console.log('Открыто')
-		// } else {
-		// 	console.log('Зыкрыто')
-		// }
-		// var checkCondition = () => {
-
-		// 	// Если все три кнопки зажаты одновременно, то откроем эту дверь
-		// 	if (complete.point0down === true && complete.point1up === true) {
-		// 		this.unlock();
-		// 	}
-		// }
-
 		return _this2;
 	}
 
 	return Door1;
 }(DoorBase);
 
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 // *
 //  * @class Door2
-//  * @augments DoorBase
+//  * @arguments DoorBase
 //  * @param {Number} number
 //  * @param {Function} onUnlock
 
@@ -212,9 +160,46 @@ var Door2 = function (_DoorBase3) {
 
 		var _this3 = _possibleConstructorReturn(this, Object.getPrototypeOf(Door2).call(this, number, onUnlock));
 
-		_this3.popup.on('click', function () {
-			this.unlock();
-		}.bind(_this3));
+		var cogwheelRotationCheck = [false, false, false];
+		var arrOfAngles = [-90, 90, -90];
+		var arrOfCogwheels = [];
+
+		for (var i = 0; i < 3; i++) {
+			var cogwheel = $('.door-riddle__cogwheel_' + i).hammer();
+			var cogwheelInstance = cogwheel.data('hammer');
+			cogwheelInstance.get('rotate').set({ enable: true });
+
+			cogwheel.bind('rotate', function (e) {
+				var angle = Math.round(e.gesture.angle);
+				$(this).css({
+					transform: 'rotate(' + e.gesture.angle + 'deg)'
+				});
+
+				if ($(this).hasClass('door-riddle__cogwheel_0')) {
+					checkIndex(0, $(this));
+				}
+				if ($(this).hasClass('door-riddle__cogwheel_1')) {
+					checkIndex(1, $(this));
+				}
+				if ($(this).hasClass('door-riddle__cogwheel_2')) {
+					checkIndex(2, $(this));
+				}
+
+				function checkIndex(i, element) {
+					if (angle === arrOfAngles[i]) {
+						cogwheelRotationCheck[i] = true;
+						element.parent().addClass('lighten');
+						checkCondition();
+					}
+				}
+			});
+			arrOfCogwheels.push(cogwheel);
+		}
+		var checkCondition = function checkCondition() {
+			if (cogwheelRotationCheck[0] === true && cogwheelRotationCheck[1] === true && cogwheelRotationCheck[2] === true) {
+				_this3.unlock();
+			}
+		};
 		return _this3;
 	}
 
