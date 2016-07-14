@@ -72,11 +72,7 @@ var DoorBase = function () {
   }, {
     key: 'showCongratulations',
     value: function showCongratulations() {
-      var _this2 = this;
-
-      setTimeout(function () {
-        alert('Дверь ' + _this2.number + ' открыта!');
-      }, 100);
+      alert('Дверь ' + this.number + ' открыта!');
     }
   }]);
 

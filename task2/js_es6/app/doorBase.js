@@ -50,9 +50,7 @@ class DoorBase {
     this.showCongratulations();
   }
   showCongratulations() {
-    setTimeout(() => {
-      alert('Дверь ' + this.number + ' открыта!')
-    }, 100)  
+    alert('Дверь ' + this.number + ' открыта!')
   }
 }
 
