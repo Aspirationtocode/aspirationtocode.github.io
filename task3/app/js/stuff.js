@@ -43,6 +43,7 @@ function onInformationBlockButtonClick(e) {
 	    audioSrc = formValues[2].value;
 	video.setAttribute('src', '' + corsString + videoSrc);
 	audio.setAttribute('src', '' + corsString + audioSrc);
+	// subtitle.setAttribute('src', `${corsString}${subtitleSrc}`);
 
 	infContainer.fadeOut(function () {
 		videoBlock.fadeIn();
