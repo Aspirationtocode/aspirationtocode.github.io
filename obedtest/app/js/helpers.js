@@ -120,7 +120,7 @@ function setData(data) {
 		    role = user.role,
 		    experience = monthsToYearsAndMonths(user.experience),
 		    experienceHidden = user.experience;
-		var listItem = $('<li class="developer-list-item"> <div class="developer-first-descr"> <div class="developer-name-and-position"> <div class="developer-name">' + fname + ' ' + lname + '</div> <div class="developer-role">' + role + '</div> </div> <div class="developer-photo"></div> </div> <div class="developer-second-descr"> <span class="developer-age">' + age + ' ' + getYearStringFromNumber(age) + '</span> <i aria-hidden="true" class="fa fa-circle"></i> <span class="developer-experience-hidden">' + experienceHidden + '</span> <span class="developer-experience">' + experience + '</span></div> </li>');
+		var listItem = $('<li class="developer-list-item"> <div class="developer-first-descr"> <div class="developer-name-and-position"> <div class="developer-name">' + lname + ' ' + fname + '</div> <div class="developer-role">' + role + '</div> </div> <div class="developer-photo"></div> </div> <div class="developer-second-descr"> <span class="developer-age">' + age + ' ' + getYearStringFromNumber(age) + '</span> <i aria-hidden="true" class="fa fa-circle"></i> <span class="developer-experience-hidden">' + experienceHidden + '</span> <span class="developer-experience">' + experience + '</span></div> </li>');
 		$('.developer-list').append(listItem);
 	}
 	$('.developers-quantity').text(data.users.length + ' человек');
