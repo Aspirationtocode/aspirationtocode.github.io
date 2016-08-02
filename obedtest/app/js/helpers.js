@@ -69,19 +69,45 @@ function getData() {
 	});
 }
 
+// 1 год, 2 года, 3 года, 4 года, 5 лет, 6 лет, 7 лет, 8 лет, 9 лет, 10 лет
 function monthsToYearsAndMonths(months) {
 	var numberOfYears = 0,
 	    numberOfMonth = 0;
 	if (months < 12) {
-		return months + ' месяца';
+		return months + ' ' + getMonthStringFromNumber(months);
 	} else {
 		numberOfYears = Math.floor(months / 12);
 		numberOfMonth = months % 12;
 		if (numberOfMonth === 0) {
-			return numberOfYears + ' год';
+			return numberOfYears + ' ' + getYearStringFromNumber(numberOfYears);
 		} else {
-			return numberOfYears + ' год и ' + numberOfMonth + ' месяца';
+			return numberOfYears + ' ' + getYearStringFromNumber(numberOfYears) + ' и ' + numberOfMonth + ' ' + getMonthStringFromNumber(numberOfMonth);
 		}
+	}
+}
+
+function getMonthStringFromNumber(n) {
+	if (n > 1 && n < 5) {
+		return 'месяца';
+	} else if (n == 1) {
+		return 'месяц';
+	} else {
+		return 'месяцев';
+	}
+}
+
+function getYearStringFromNumber(n) {
+	var string = n + '';
+	var lastOne = string[string.length - 1];
+	var lastTwo = string[string.length - 2] + string[string.length - 1];
+	if (lastTwo > 9 && lastTwo < 21) {
+		return 'лет';
+	} else if (lastOne > 1 && lastOne < 5) {
+		return 'года';
+	} else if (lastOne == 1) {
+		return 'год';
+	} else {
+		return 'лет';
 	}
 }
 
@@ -94,7 +120,7 @@ function setData(data) {
 		    role = user.role,
 		    experience = monthsToYearsAndMonths(user.experience),
 		    experienceHidden = user.experience;
-		var listItem = $('<li class="developer-list-item"> <div class="developer-first-descr"> <div class="developer-name-and-position"> <div class="developer-name">' + fname + ' ' + lname + '</div> <div class="developer-role">' + role + '</div> </div> <div class="developer-photo"></div> </div> <div class="developer-second-descr"> <span class="developer-age">' + age + ' года</span> <i aria-hidden="true" class="fa fa-circle"></i> <span class="developer-experience-hidden">' + experienceHidden + '</span> <span class="developer-experience">' + experience + '</span></div> </li>');
+		var listItem = $('<li class="developer-list-item"> <div class="developer-first-descr"> <div class="developer-name-and-position"> <div class="developer-name">' + fname + ' ' + lname + '</div> <div class="developer-role">' + role + '</div> </div> <div class="developer-photo"></div> </div> <div class="developer-second-descr"> <span class="developer-age">' + age + ' ' + getYearStringFromNumber(age) + '</span> <i aria-hidden="true" class="fa fa-circle"></i> <span class="developer-experience-hidden">' + experienceHidden + '</span> <span class="developer-experience">' + experience + '</span></div> </li>');
 		$('.developer-list').append(listItem);
 	}
 	$('.developers-quantity').text(data.users.length + ' человек');
