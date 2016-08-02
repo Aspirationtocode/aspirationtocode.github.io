@@ -7,14 +7,22 @@ $('.expand-filter-dropdown-menu').on('click', function () {
 
 $('.display-block').on('click', function () {
 	if (!$(this).hasClass('checked')) {
-		$('.developer-list-item').toggleClass('list-view');
+		$('.developer-list').toggleClass('list-view');
+		$('.list-manipulation-line').css({
+			marginBottom: '18px',
+			borderBottom: '1px solid #EEEEEE'
+		});
 		$('.display-block').toggleClass('checked');
 		$('.display-list').toggleClass('checked');
 	}
 });
 $('.display-list').on('click', function () {
 	if (!$(this).hasClass('checked')) {
-		$('.developer-list-item').toggleClass('list-view');
+		$('.developer-list').toggleClass('list-view');
+		$('.list-manipulation-line').css({
+			marginBottom: '0px',
+			border: 'none'
+		});
 		$('.display-block').toggleClass('checked');
 		$('.display-list').toggleClass('checked');
 	}

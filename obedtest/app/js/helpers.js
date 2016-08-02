@@ -49,9 +49,9 @@ function filter(developerRole) {
 			var role = $(item).find('.developer-role').text().toLowerCase();
 			var condition = stringInArray(role, developerRole.conditions);
 			if (condition) {
-				$(item).hide(200);
+				$(item).hide(300);
 			} else {
-				$(item).show(200);
+				$(item).show(300);
 			}
 		});
 		$('.filter-dropdown-list-item').removeClass('checked');
@@ -106,4 +106,6 @@ function setData(data) {
 	};
 
 	var userList = new List('developers', options);
+
+	$('.experience-sort').trigger('click');
 }
