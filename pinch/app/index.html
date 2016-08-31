@@ -17,18 +17,32 @@
     <style>
     </style>
     <!-- Load CSS & WebFonts Main Function-->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
-	  <script>
-	    var OneSignal = window.OneSignal || [];
-	    OneSignal.push(["init", {
-	      appId: "5d0f10a8-0062-4127-88b0-c3cc55865229",
-	      autoRegister: true, /* Set to true to automatically prompt visitors */
-	      subdomainName: 'http://aspirationtocode.github.io',   
-	      notifyButton: {
-	          enable: true /* Set to false to hide */
-	      }
-	    }]);
-	  </script>
+    <script>
+(function(w, d, s, id, n){
+    w[n] = w[n] || {q: [],
+        init: function(o) {w[n].initOpts = o;},
+        ready: function(c) {w[n].q.push(c);}};
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(window, document, "script", "wonderpush-jssdk-loader", "WonderPush"));
+
+WonderPush.init({
+    webKey: "c8e3782586b7f8e0f5b7cf6a9a1c59490cc9abe277df7bd5e44b8e0a95ad2ca0",
+    optInOptions: {
+        // You can modify or translate the following:
+        modalBoxMessage: "We will send you personalized notifications.<br/>You can always unsubscribe at any time.",
+        modalBoxButton: "Got it!",
+        externalBoxProcessingMessage: "Subscribing...",
+        externalBoxSuccessMessage: "Thanks for subscribing!",
+        externalBoxFailureMessage: "Sorry, something went wrong.",
+        externalBoxTooLongHint: "Poor connection or private browsing?",
+        externalBoxCloseHint: "Close"
+    }
+});
+</script>
     <script>
         ! function(e) {
             "use strict";
@@ -110,6 +124,7 @@
         <div class="playbox"></div>
         <div class="output">dfdf</div>
     </div>
+    <div id="wonderpush-subscription-switch" data-sentence="Receive our latest news by web push: " data-on="YES" data-off="NO"></div>
     <div class="hidden"></div>
     <!-- Поддержка старых браузеров-->
     <!--[if lt IE 9]>
