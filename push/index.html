@@ -3,31 +3,31 @@
 		<title>Push App</title>
 		<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 		<script>
-		(function(w, d, s, id, n){
-				w[n] = w[n] || {q: [],
-						init: function(o) {w[n].initOpts = o;},
-						ready: function(c) {w[n].q.push(c);}};
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js";
-				fjs.parentNode.insertBefore(js, fjs);
-		}(window, document, "script", "wonderpush-jssdk-loader", "WonderPush"));
+(function(w, d, s, id, n){
+    w[n] = w[n] || {q: [],
+        init: function(o) {w[n].initOpts = o;},
+        ready: function(c) {w[n].q.push(c);}};
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(window, document, "script", "wonderpush-jssdk-loader", "WonderPush"));
 
-		WonderPush.init({
-				webKey: "827f7dc5fe4e982e33c765d87df06ed5c69cba54addb62c367f6d78e35e1e77d",
-				optInOptions: {
-						// You can modify or translate the following:
-						modalBoxMessage: "We will send you personalized notifications.<br/>You can always unsubscribe at any time.",
-						modalBoxButton: "Got it!",
-						externalBoxProcessingMessage: "Subscribing...",
-						externalBoxSuccessMessage: "Thanks for subscribing!",
-						externalBoxFailureMessage: "Sorry, something went wrong.",
-						externalBoxTooLongHint: "Poor connection or private browsing?",
-						externalBoxCloseHint: "Close"
-				}
-		});
-		</script>
+WonderPush.init({
+    webKey: "10bb6d9e554a4dca776d2bddebd319511a7bcf9b709f504eee39e83001cf2cb4",
+    optInOptions: {
+        // You can modify or translate the following:
+        modalBoxMessage: "We will send you personalized notifications.<br/>You can always unsubscribe at any time.",
+        modalBoxButton: "Got it!",
+        externalBoxProcessingMessage: "Subscribing...",
+        externalBoxSuccessMessage: "Thanks for subscribing!",
+        externalBoxFailureMessage: "Sorry, something went wrong.",
+        externalBoxTooLongHint: "Poor connection or private browsing?",
+        externalBoxCloseHint: "Close"
+    }
+});
+</script>
 	</head>
 	<body>
 		<div id="wonderpush-subscription-switch" data-sentence="Receive our latest news by web push: " data-on="YES" data-off="NO"></div>
@@ -35,11 +35,11 @@
 		<button name="foo" value="push" class="send-push">Push</button>
 		<script type="text/javascript">
 			$('.send-push').on('click', function() {
-				$.post( "https://api.wonderpush.com/v1/management/deliveries?accessToken=YTY0MzgyMDQyNThlNGRjOWIxMmZiMTJkOTc3MGM0MjRjN2U2MjlkY2M1OTVhNTY3YTAzMzM5NDNkMTI0MzM0OA", 	{
+				$.post( "https://api.wonderpush.com/v1/management/deliveries?accessToken=N2M0OTdiY2RiM2EyNTFlNTg4MDZmNjg0Y2YxYWFiMGI0NmRhNGViYjM1ZTNjNTUwODAyODNiYjgxNDY4ZTJkOQ", 	{
 						"targetSegmentIds": "@ALL",
 						"notification": {
 								"alert": {
-									"text": "push http"
+									"text": "push-dudeka"
 								}
 						}
 				})
