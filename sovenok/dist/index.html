@@ -47,7 +47,10 @@
 						<div class="achievement__number">10</div>
 						<div class="achievement__aim">Лет работы</div>
 					</div>
-				</div><a class="action-button"><span class="action-button__text">Перейти на сайт</span></a>
+				</div>
+				<a class="action-button action-button--go-site">
+					<div class="action-button__text">Перейти на сайт</div>
+				</a>
 			</section>
 			<section class="section-2">
 				<div class="section-2__image-iphone"></div>
@@ -126,9 +129,17 @@
 						<div class="person-list-item__name">Дмитрий Соловьев —</div>
 						<div class="person-list-item__position">копирайтер</div>
 					</li>
-				</ul><a class="action-button"><span class="action-button__text">Хочу похожий сайт</span></a>
-				<div class="section-4__comment"></div>
+				</ul>
+				<a class="action-button action-button--want-site">
+					<div class="action-button__text">Хочу похожий сайт</div>
+				</a>
+				<a href="#popup-comment" class="section-4__comment popup-comment"></a>
 			</section>
+			<div id="popup-comment" class="mfp-hide">
+				<div class="big-comment">
+					<div class="mfp-close popup-comment-close"></div>
+				</div>
+			</div>
 		</div>
 		<script src="assets/scripts/build.js"></script>
 	</body>

@@ -1,16 +1,17 @@
-<svg width="1071" height="1200" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+<svg width="1071" height="1200" xmlns="http://www.w3.org/2000/svg" style="vector-effect: non-scaling-stroke;" stroke="null">
  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
  <g stroke="null">
   <title stroke="null">background</title>
-  <rect stroke="null" fill="none" id="canvas_background" height="1202" width="1073" y="-1" x="-1"/>
-  <g stroke="null" style="vector-effect: non-scaling-stroke;" display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
-   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  <rect stroke="null" x="-1" y="-1" width="1073" height="1202" id="canvas_background" fill="none"/>
+  <g stroke="null" id="canvasGrid" display="none">
+   <rect stroke="null" id="svg_2" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)"/>
   </g>
  </g>
  <g stroke="null">
   <title stroke="null">Layer 1</title>
-  <path stroke="#fff4d8" transform="rotate(-180 534.4999389648438,346.36502075195307) " id="svg_1" d="m0,675.865026l0,-659.00005l1070.99989,659.00005l-1070.99989,0z" stroke-width="1.5" fill="#fff4d8"/>
-  <path stroke="#16181a" id="svg_3" d="m0,681.469893l0,-664.00004l1078.000001,646.00004l-1078.000001,0z" stroke-width="1.5" fill="#16181a"/>
-  <rect stroke="#16181a" id="svg_4" height="522" width="1073.000024" y="664" x="0" stroke-width="1.5" fill="#16181a"/>
+  <path stroke="#fff4d8" fill="#fff4d8" stroke-width="1.5" d="m0.750065,661.394496l0,-660.166218l1070.054338,660.166218l-1070.054338,0z" id="svg_1" transform="rotate(-180 535.7772827148438,331.3113708496093) "/>
+  <path stroke="#16181a" fill="#16181a" stroke-width="1.5" d="m-2.813675,681.618064l-1.001888,-680.868064l1075.678777,662.410794l-1075.678777,0l-0.751416,18.45727z" id="svg_3"/>
+  <rect x="0" stroke="#16181a" fill="#16181a" stroke-width="1.5" y="663.24495" width="1071.083989" height="537.625012" id="svg_4"/>
  </g>
 </svg>
