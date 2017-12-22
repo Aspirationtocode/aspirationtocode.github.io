@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8f9c014db118ff9a2837"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1fb2e9caf955234ab732"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -13853,34 +13853,34 @@ var _jqueryConstants2 = _interopRequireDefault(_jqueryConstants);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_jqueryConstants2.default.headerElement.on('click', function () {
-	var currentTabIndex = (0, _jquery2.default)(this).data('tab');
+_jqueryConstants2.default.headerElement.on("click", function () {
+	var currentTabIndex = (0, _jquery2.default)(this).data("tab");
 	_jqueryConstants2.default.headerElement.removeClass(_jqueryConstants2.default.headerElementActiveClass);
 	(0, _jquery2.default)(this).addClass(_jqueryConstants2.default.headerElementActiveClass);
-	(0, _jquery2.default)('.tabs-content-element').removeClass('tabs-content-element--active');
-	(0, _jquery2.default)('.tabs-content-element--' + currentTabIndex).addClass('tabs-content-element--active');
+	(0, _jquery2.default)(".tabs-content-element").removeClass("tabs-content-element--active");
+	(0, _jquery2.default)(".tabs-content-element--" + currentTabIndex).addClass("tabs-content-element--active");
 });
 
-(0, _jquery2.default)('.header-open-mobile-menu').on('click', function () {
-	(0, _jquery2.default)(this).toggleClass('header-open-mobile-menu--close');
-	(0, _jquery2.default)('.header-elements').toggleClass('header-elements--mobiled');
-	(0, _jquery2.default)('.header-overlay').toggleClass('header-overlay--active');
+(0, _jquery2.default)(".header-open-mobile-menu").on("click", function () {
+	(0, _jquery2.default)(this).toggleClass("header-open-mobile-menu--close");
+	(0, _jquery2.default)(".header-elements").toggleClass("header-elements--mobiled");
+	(0, _jquery2.default)(".header-overlay").toggleClass("header-overlay--active");
 });
 
-(0, _jquery2.default)(window).on('resize', function () {
+(0, _jquery2.default)(window).on("resize", function () {
 	if ((0, _getViewportSize2.default)().width > 722) {
-		(0, _jquery2.default)('.header-elements').removeClass('header-elements--mobiled');
-		(0, _jquery2.default)('.header-overlay').removeClass('header-overlay--active');
-		(0, _jquery2.default)('.header-open-mobile-menu').removeClass('header-open-mobile-menu--close');
+		(0, _jquery2.default)(".header-elements").removeClass("header-elements--mobiled");
+		(0, _jquery2.default)(".header-overlay").removeClass("header-overlay--active");
+		(0, _jquery2.default)(".header-open-mobile-menu").removeClass("header-open-mobile-menu--close");
 	}
 });
 
-(0, _jquery2.default)('.dropdown-menu-header').bind('click', function () {
-	var dropdownMenuElements = (0, _jquery2.default)(this).parent().children('.dropdown-menu-elements');
-	(0, _jquery2.default)(this).toggleClass('dropdown-menu-header--active');
-	dropdownMenuElements.toggleClass('dropdown-menu-elements--active');
-	if ((0, _jquery2.default)(this).hasClass('dropdown-menu-header--active')) {
-		(0, _jquery2.default)('html, body').animate({ scrollTop: dropdownMenuElements.offset().top - 100 }, 'slow');
+(0, _jquery2.default)(".dropdown-menu-header").bind("click", function () {
+	var dropdownMenuElements = (0, _jquery2.default)(this).parent().children(".dropdown-menu-elements");
+	(0, _jquery2.default)(this).toggleClass("dropdown-menu-header--active");
+	dropdownMenuElements.toggleClass("dropdown-menu-elements--active");
+	if ((0, _jquery2.default)(this).hasClass("dropdown-menu-header--active")) {
+		(0, _jquery2.default)("html, body").animate({ scrollTop: dropdownMenuElements.offset().top - 100 }, "slow");
 		return false;
 	}
 });
@@ -13904,8 +13904,8 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-	headerElement: (0, _jquery2.default)('.header-elements__element'),
-	headerElementActiveClass: 'header-elements__element--active'
+	headerElement: (0, _jquery2.default)(".header-elements__element"),
+	headerElementActiveClass: "header-elements__element--active"
 };
 
 /***/ }),
@@ -14960,15 +14960,15 @@ var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Cdiv class=\"tabs-content-data-stuff\"\u003E\u003Cdiv class=\"stuff-persons\"\u003E";
 pug_mixins["stuff-person"]("Петров Андрей Борисович", "зав. кафедрой", "д.т.н., профессор", "petrov");
 pug_mixins["stuff-person"]("Андрианова Елена Гельевна", "доцент", "к.т.н., доцент", "andrianova");
-pug_mixins["stuff-person"]("Панов Александр Владимирович", "доцент", null, "panov");
+pug_mixins["stuff-person"]("Башлыкова Анна Александровна", null, "Доцент", "bashlykova");
+pug_mixins["stuff-person"]("Стотланд Ирина Аркадьевна", null, "к.т.н., доцент");
 pug_mixins["stuff-person"]("Тарасов Е.И.", "доцент", "к.т.н., доцент");
 pug_mixins["stuff-person"]("Крюков Дмитрий Алексеевич", null, "к.т.н., доцент");
-pug_mixins["stuff-person"]("Стотланд Ирина Аркадьевна", null, "к.т.н., доцент");
+pug_mixins["stuff-person"]("Панов Александр Владимирович", "доцент", null, "panov");
 pug_mixins["stuff-person"]("Томашевская Валерия Сергеевна", null, "к.т.н., доцент", "tomashevskaya");
 pug_mixins["stuff-person"]("Трохаченкова Надежда Николаевна", null, "Старший преподаватель", "trokhachenkova");
 pug_mixins["stuff-person"]("Мирзоян Дмитрий Ильич", null, "Старший преподаватель", "mirzoyan");
 pug_mixins["stuff-person"]("Неменко Мария Витальевна", null, "Старший преподаватель", "nemenko");
-pug_mixins["stuff-person"]("Башлыкова Анна Александровна", null, "Старший преподаватель", "bashlykova");
 pug_mixins["stuff-person"]("Давыдов Денис Павлович", null, "ассистент", "davydov");
 pug_mixins["stuff-person"]("Алдобаева Василиса Николаевна", null, "ассистент", "aldobaeva");
 pug_mixins["stuff-person"]("Прощаева Анастасия Андреевна", null, "ассистент", "proshaeva");
